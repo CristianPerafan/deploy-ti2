@@ -1,0 +1,353 @@
+{% extends "base.html" %}
+
+
+{% block body %}
+<body class="">
+  <div class="header">
+    <div class="header-left">
+      <a class="navbar-brand" href="#">
+        <img src="{{ url_for('static', filename='images/greenbot.webp') }}" style='width: 48px; height: 48px;'
+          class='img-fluid' />
+      </a>
+      <a class="nav-link active" aria-current="page"
+        style="font-size: 1.5rem; color:white; font-weight: 600;">VitBot</a>
+    </div>
+    <div class="header-right">
+      <img src="{{ url_for('static', filename='images/user-icon.png') }}" alt="User Avatar">
+    </div>
+  </div>
+
+  <!-- Mappin Post Traumatic Stress Symptoms -->
+
+  <div class="container mt-2">
+    <h2 class="text mb-4">Selecciona los síntomas que presentas</h2>
+    <div class="row mt-2">
+      <div class="col-md-6">
+        <h3 class="text-secondary mb-3">Síntomas intrusivos</h3>
+        <p class="text-secondary">Selecciona los síntomas que presentas:</p>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="intrusion_symptoms1">
+          <label class="form-check-label" for="intrusion_symptoms1">
+            Recuerdos repetitivos, involuntarios y angustiosos del evento traumático.
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="intrusion_symptoms2">
+          <label class="form-check-label" for="intrusion_symptoms2">
+            Sueños angustiosos relacionados con un evento traumático.
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="intrusion_symptoms3">
+          <label class="form-check-label" for="intrusion_symptoms3">
+            Episodios en los que la persona siente que está reviviendo el evento traumático.
+          </label>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <h3 class="text-secondary mb-3">Estado de ánimo negativo</h3>
+        <p class="text-secondary">Selecciona los síntomas que presentas:</p>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="negative_mood1">
+          <label class="form-check-label" for="negative_mood1">
+            Sentimientos persistentes de tristeza o desesperanza.
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="negative_mood2">
+          <label class="form-check-label" for="negative_mood2">
+            Pérdida de interés en actividades que antes disfrutaba.
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="negative_mood3">
+          <label class="form-check-label" for="negative_mood3">
+            Sentimientos de inutilidad o culpa excesiva.
+          </label>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <h3 class="text-secondary mb-3">Síntomas disociativos</h3>
+        <p class="text-secondary">Selecciona los síntomas que presentas:</p>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="dissociative_symptom1">
+          <label class="form-check-label" for="dissociative_symptom1">
+            Sensación de estar desconectado de la realidad.
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="dissociative_symptom2">
+          <label class="form-check-label" for="dissociative_symptom2">
+            Dificultad para recordar aspectos importantes del evento traumático.
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="dissociative_symptom3">
+          <label class="form-check-label" for="dissociative_symptom3">
+            Pérdida de memoria sobre eventos específicos.
+          </label>
+        </div>
+      </div>
+
+      <div class="col-md-6 ">
+        <h3 class="text-secondary mb-3">Eventos de separación</h2>
+        <div class="row mt-2">
+          <p class="text-secondary">Selecciona los eventos de separación que has experimentado:</p>
+          <div class="col-md-12 d-flex">
+            
+          <div class="col-md-6">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="Separation Discomfort" id="separation_event1">
+              <label class="form-check-label" for="separation_event1">
+                Incomodidad por separación.
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="Loss Concern" id="separation_event2">
+              <label class="form-check-label" for="separation_event2">
+                Preocupación por la pérdida.
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="Adverse Event Anxiety" id="separation_event3">
+              <label class="form-check-label" for="separation_event3">
+                Ansiedad por eventos adversos.
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="Fear of Leaving" id="separation_event4">
+              <label class="form-check-label" for="separation_event4">
+                Miedo a dejar.
+              </label>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="Fear of Solitude" id="separation_event5">
+              <label class="form-check-label" for="separation_event5">
+                Miedo a la soledad.
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="Fear of Sleeping" id="separation_event6">
+              <label class="form-check-label" for="separation_event6">
+                Miedo a dormir.
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="Separation Nightmares" id="separation_event7">
+              <label class="form-check-label" for="separation_event7">
+                Pesadillas por separación.
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="Physical Symptoms" id="separation_event8">
+              <label class="form-check-label" for="separation_event8">
+                Síntomas físicos.
+              </label>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-2 d-flex align-items-center">
+      <div class="col-md-6">
+        <h3 class="text-secondary mb-3">Síntomas de evitación</h3>
+        <p class="text-secondary">Selecciona los síntomas que presentas:</p>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="avoidance_symptoms1">
+          <label class="form-check-label" for="avoidance_symptoms1">
+            Evitación de pensamientos o sentimientos relacionados con un evento traumático.
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="avoidance_symptoms2">
+          <label class="form-check-label" for="avoidance_symptoms2">
+            Evitación de actividades, lugares o personas que recuerdan un evento traumático.
+          </label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="avoidance_symptoms3">
+          <label class="form-check-label" for="avoidance_symptoms3">
+            Incapacidad para recordar aspectos importantes un evento traumático.
+          </label>
+        </div>
+
+
+
+      </div>
+
+      <div class="col-md-3">
+        <h3 class="text-secondary mb-3">Sustancias Psicoactivas</h3>
+        <p class="text-secondary">Consume usted sustancias psicoactivas? :</p>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="consumes_psychoactive_substances" value="True" id="psycoactiveYES">
+          <label class="form-check-label" for="psycoactiveYES">
+            Sí
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="consumes_psychoactive_substances" value="False" id="psycoactiveNO">
+          <label class="form-check-label" for="psycoactiveNO">
+            No
+          </label>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <h3 class="text-secondary mb-3">Impulsos <br> Agresivos</h3>
+        <p class="text-secondary">Ha tenido usted impulsos agresivos ultimamente? :</p>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="agressive_impulses" value="True" id="aiYES">
+          <label class="form-check-label" for="aiYES">
+            Sí
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="agressive_impulses" value="False" id="aiNO">
+          <label class="form-check-label" for="aiNO">
+            No
+          </label>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="container mt-2">
+    <div class="d-flex align-items-center">
+    <div class="col-md-6 flex-column"> 
+    <h2 class="text mb-4">Eventos traumáticos</h2>
+    <div class="row mt-2">
+      <div class="col-md-12">
+        <p class="text-secondary">Selecciona los eventos traumáticos que has vivido:</p>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="Accidente de Transito" id="traumatic_event1">
+          <label class="form-check-label" for="traumatic_event1">
+            Accidente de tráfico.
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="Catastrofe Natural" id="traumatic_event2">
+          <label class="form-check-label" for="traumatic_event2">
+             Catástrofes naturales (terremotos, huracanes, etc.).
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="Violencia de genero" id="traumatic_event3">
+          <label class="form-check-label" for="traumatic_event3">
+            Violencia de género.
+          </label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="Accidente de trabajo" id="traumatic_event4">
+          <label class="form-check-label" for="traumatic_event4">
+            Accidente de trabajo.
+          </label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="Violencia familiar" id="traumatic_event5">
+          <label class="form-check-label" for="traumatic_event5">
+            Violencia familiar
+          </label>
+        </div>
+      </div>
+    </div>
+
+    </div> 
+    <div class="col-md-3 ">
+      <h3 class="text-secondary mb-3">Depresion</h3>
+      <p class="text-secondary">Ha sentido Depresion ultimamente? :</p>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="depresion" value="True" id="depresionYES">
+        <label class="form-check-label" for="depresionYES">
+          Sí
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="depresion" value="False" id="depresionNO">
+        <label class="form-check-label" for="depresionNO">
+          No
+        </label>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <h3 class="text-secondary mb-3">Ansiedad</h3>
+      <p class="text-secondary">Ha sentido Ansiedad ultimamente? :</p>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="anxiety" value="True" id="anxietyYES">
+        <label class="form-check-label" for="anxietyYES">
+          Sí
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="anxiety" value="False" id="anxietyNO">
+        <label class="form-check-label" for="anxietyNO">
+          No
+        </label>
+      </div>
+    </div>
+
+
+    </div>
+
+
+    <div class="col-md-6 mt-4">
+      <h3 class="text-secondary mb-3">Cuentanos más de Ti</h3>
+      <p class="text-secondary">Ha presentado algunas de estas acciones ultimamente? :</p>
+      <div class="form-check mb-3">
+        <input class="form-check-input" type="checkbox" value="Distrust" id="distrust">
+        <label class="form-check-label" for="distrust">
+          Desconfianza y suspicacia hacia los demás sin justificación
+        </label>
+      </div>
+
+      <div class="form-check mb-3">
+        <input class="form-check-input" type="checkbox" value="Fear" id="fear">
+        <label class="form-check-label" for="fear">
+          Episodios de miedo intenso que comienzan abruptamente
+        </label>
+      </div>
+
+      <div class="form-check mb-3">
+        <input class="form-check-input" type="checkbox" value="NotEat" id="noteat">
+        <label class="form-check-label" for="noteat">
+          Evitar ciertos alimentos o restricciones alimentarias extremas
+        </label>
+      </div>
+
+    </div>
+
+
+    <div class="d-flex justify-content-center">
+      <button type="submit" class="btn btn-success mt-3" onclick="onSumbit()">Enviar</button>
+    </div>
+
+
+  </div>
+
+
+
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+  <script src="{{url_for('static', filename='js/main.js')}}"></script>
+  <script type="text/javascript">
+    window.onload = cleanProject;
+  </script>
+
+
+</body>
+
+{% endblock %}

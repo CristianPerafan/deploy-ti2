@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block customcss %}
+
+<style>
+    .text-one {
+        color: #0f8506;
+        font-weight: 700;
+    }
+    .border-one {
+        border-color: #0f8506;
+        border-width: 2px;
+    }
+    .text-one:hover {
+        color: #fff;
+        font-weight: 700;
+    }
+    .border-one:hover {
+        border-color: #fff;
+        border-width: 2px;
+        background-color: rgb(red, green, blue)
+    }
+    .text-two {
+        color: #278328;
+        font-weight: 700;
+    }
+</style>
+
+{% endblock %}
+
+{% block body %}
+
+<div class='d-flex flex-column vw-100 vh-100 bg-light'> 
+    <nav class="navbar navbar-expand-lg bg-success py-2">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src='https://new.green-bot.app/img/ui/mascot/greenbot_downbad.png' style='width: 48px; height: 48px;' class='img-fluid'/>
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page"
+                style="font-size: 1.5rem; color:white; font-weight: 600;"
+                >VitBot</a>
+              </li>
+            </ul>
+            <a href="/login" class="btn btn-light px-4 text-one border-one">Login</a>
+            <a href="/register" class="btn btn-light mx-3 px-3 text-one border-one">Register</a>
+          </div>
+        </div>
+      </nav>
+
+        <div class='container-fluid d-flex flex-grow-1'>
+            <div class="row w-100 flex-grow-1 bg-light">
+                <div class='col-md-6 col-sm-12 d-flex justify-content-center align-items-center'>
+                    <div class='col-8'>
+                        <h1 class='text-two'>Welcome to Vit-Bot!!</h1>
+                        <p style='font-weight:600;'>
+                            Accessing mental health services can be challenging for many individuals due to barriers such as stigma, cost, and availability of resources. Our innovative chatbot-based expert system is here to change that.
+                        </p> 
+                        <p class='text-two mt-1'>
+                            Confidential. Accessible. Supportive.
+                        </p>
+                    </div>   
+                </div>
+                <div class='col-md-6 col-sm-12 d-flex justify-content-center align-items-center'>
+                    <img class='img-fluid' style='border-radius:10px;'  src='https://www.smatbot.com/blog/wp-content/uploads/2021/04/new-health-care-copy.jpg'>
+                </div>
+            </div>
+        </div>
+
+        <footer class='d-flex justify-content-center align-items-center'>
+            <div class="d-flex align-self-center">
+                <h3 class='text-center' style='font-size:12px;'>Developed for Cristian Perafan, Samuel Soto & George Trujillo in Flask</h3>
+                <img class='ms-1' style='width:16px; height:16px;' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrPR-l7qw2ucKpChew6zz_MXrlwnJEFE02Tr97UCZQEw&s'/>
+            </div>
+        </footer>
+</div>
+
+{% endblock %}

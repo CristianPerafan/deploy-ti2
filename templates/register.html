@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block customcss %}
+
+<style>
+    .bg-gradient-primary {
+        background: linear-gradient(to right, #28a745, green);
+    }
+    .text-one {
+        color: green;
+        font-weight: 600;
+    }
+    .border-input {
+        border: 1px solid green;
+        border-radius: 5px;
+    }
+</style>
+
+{% endblock %}
+
+{% block body %}
+
+<div class='container-fluid vh-100 w-100 bg-gradient-primary d-flex justify-content-center align-items-center'>
+    <div class='bg-light col-12 col-sm-10 col-md-8 col-lg-4 py-2 my-3' style='border-radius:10px;'>
+        <div class='d-flex flex-column align-items-center py-2' >
+            <h2 class='text-one'>Register</h2>
+            <form action="/register" class='col-8' method="post">
+                <div class="mb-3">
+                    <label for="InputEmail1" class="form-label text-one">Email address</label>
+                    <input name="email" type="email" class="form-control border-input" id="InputEmail1" aria-describedby="emailHelp" required>
+                </div>
+                <div class="mb-3">
+                    <label for="Password1" class="form-label text-one">Password</label>
+                    <input name="password" type="password" class="form-control border-input" id="Password1" required>
+                </div>                
+                <div class="mb-3">
+                    <label for="firstName" class="form-label text-one">First Name</label>
+                    <input name="first_name" type="text" class="form-control border-input" id="firstName" required>
+                </div>
+                <div class="mb-3">
+                    <label for="lastName" class="form-label text-one">Last Name</label>
+                    <input name="last_name" type="text" class="form-control border-input" id="lastName" required>
+                </div>
+                <label for="gender" class="form-label text-one">Gender</label>
+                <select class="form-select text-one border-input" name="gender" required>
+                    <option value="masculino">Masculino</option>
+                    <option value="femenino">Femenino</option>
+                    <option value="otro">Otro</option>
+                  </select>
+                
+                {% if error %}
+                  <p class='text-center' style='color:red;'>{{ error }}</p>
+                {% endif %}  
+                <div class="text-center mt-4">
+                    <button type="submit" class="btn btn-success" style='font-weight:600;'>Submit</button>
+                </div>                  
+            </form>
+        </div>
+        
+    </div>
+</div>
+
+{% endblock %}
